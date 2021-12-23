@@ -1,10 +1,68 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
-</head>
+<?php
+include '../../connection.php';
 
-<body>
-</body>
-</html>
+
+class StoreModel extends Database {
+
+    public function __construct() {
+        parent::connect();
+    }
+    
+    public function getAll() {
+        $conn = parent::connect();
+        $sql = "SELECT * FROM services";
+        $result = mysqli_query($conn, $sql);
+        while($row = mysqli_fetch_array($result)){
+            $data[]=$row;
+        }
+        return $data;
+    }
+
+    public function getPage($page, $sl=20) {
+        $conn = parent::connect();
+        $AllStore = count($this->getAll());
+        $totalPage = ceil($AllStore/$sl);
+        if ($page > $totalPage) {
+            $page = $totalPage;
+        }
+        else if($page < 1) {
+            $page = 1;
+        }
+        $start = ($page - 1) * $sl;
+        $sql = "SELECT * FROM stores LIMIT $start, $sl";
+        $result = mysqli_query($conn, $sql);
+        while($row = mysqli_fetch_array($result)) {
+            $data[] = $row;
+        }
+        return $data;
+    }
+
+    public function getStoreByType($page, $sl=20, $type_id) {
+        $conn = parent::connect();
+        $AllStore = count($this->getAll());
+        $totalPage = ceil($AllStore/$sl);
+        if ($page > $totalPage) {
+            $page = $totalPage;
+        }
+        else if($page < 1) {
+            $page = 1;
+        }
+        $start = ($page - 1) * $sl;
+        $sql = "SELECT * FROM stores WHERE type_id='$type_id' LIMIT $start, $sl";
+        $result = mysqli_query($conn, $sql);
+        while($row = mysqli_fetch_array($result)) {
+            $data[] = $row;
+        }
+        return $data;
+    }
+
+    public function getStoreByName($name){
+        $conn = parent::connect();
+        $sql = "SELECT * FROM stores WHERE name='$name'";
+        $result = mysqli_query($conn, $sql);
+        while($row = mysqli_fetch_array($result)){
+            $data[]=$row;
+        }
+        return $data;
+    }
+}

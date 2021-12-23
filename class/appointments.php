@@ -2,15 +2,15 @@
 include '../../connection.php';
 
 
-class ServiceModel extends Database {
+class AppointmentModel extends Database {
 
     public function __construct() {
         parent::connect();
     }
-    
+
     public function getAll() {
         $conn = parent::connect();
-        $sql = "SELECT * FROM services";
+        $sql = "SELECT * FROM appointments";
         $result = mysqli_query($conn, $sql);
         while($row = mysqli_fetch_array($result)){
             $data[]=$row;
@@ -18,13 +18,14 @@ class ServiceModel extends Database {
         return $data;
     }
 
-    public function getServiceByStoreID($storeid){
+    public function getStaffByCustomerID($cusid){
         $conn = parent::connect();
-        $sql = "SELECT * FROM services WHERE store_id='$storeid'";
+        $sql = "SELECT * FROM appointments WHERE customer_id='$cusid'";
         $result = mysqli_query($conn,$sql);
         while($row = mysqli_fetch_array($result)){
            $data[] = $row;
         }
         return $data;
     }
+    
 }
