@@ -2,9 +2,14 @@ body {
   font-size: 18px;
 }
 
-header {
+.nav-header {
   -webkit-box-shadow: 0px 5px 15px 0px #ccc;
           box-shadow: 0px 5px 15px 0px #ccc;
+}
+
+.navbar-brand {
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 .card-title {
@@ -23,11 +28,6 @@ header {
 
 .booknow .btn-primary {
   background-color: #1a263a;
-}
-
-.navbar-brand {
-  font-size: 2rem;
-  font-weight: 700;
 }
 
 .info_title {

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <!-- bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
@@ -18,14 +19,207 @@
 
     <!-- font awesome icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
 
     <!-- CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+    <!-- NAVIGATION -->
+    <nav>
+        <nav class="
+          navbar navbar-expand-md navbar-light
+          bg-light
+          fixed-top
+          nav-header
+        ">
+            <a class="navbar-brand ml-4" href="#">Beauty</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Booking History</a>
+                    </li>
+                    <form class="form-inline mt-2 mt-md-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" />
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                            Search
+                        </button>
+                    </form>
+                </ul>
+                <button type="button" class="btn btn-info mr-4">Vo Nhu</button>
+            </div>
+        </nav>
+    </nav>
+    <!-- END NAVIGATION -->
+
+    <!-- HEADER -->
+    <header>
+        <img src="../assets/home.png" alt="" />
+    </header>
+    <!-- END HEADER -->
+
+    <!-- SERVICES -->
+    <div class="container mt-3">
+        <div class="title">Top services in Beauty</div>
+
+        <div class="row row-cols-1 row-cols-md-3 services">
+            <div class="col mb-4">
+                <div class="card" style="height: 330px">
+                    <img src="../assets/store/store1.jpg" class="card-img-top" alt="..." />
+                    <div class="card-body">
+                        <h5 class="card-title nowrap">Balance Massage & Wellness</h5>
+                        <p class="cart-text nowrap">
+                            152 New Cavendish Street, London (Fitzrovia), W1W 6YL, England
+                        </p>
+                        <div class="icons" style="color: yellow">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div>
+                            <span class="card-text" style="font-weight: 600">4.9 Great</span>
+                            <span class="text-muted mt-5">856 ratings</span>
+                        </div>
+                        <p href="#" class="badge badge-primary">FEATURED</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col mb-4">
+                <div class="card" style="height: 330px">
+                    <img src="../assets/store/store2.jpg" class="card-img-top" alt="..." />
+                    <div class="card-body">
+                        <h5 class="card-title nowrap">ELP Barbershop</h5>
+                        <p class="cart-text nowrap">
+                            67 Amwell Street, London (Islington), EC1R 1UT, England
+                        </p>
+                        <div class="icons" style="color: yellow">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div>
+                            <span class="card-text" style="font-weight: 600">4.9 Great</span>
+                            <span class="text-muted mt-5">856 ratings</span>
+                        </div>
+                        <p href="#" class="badge badge-primary">FEATURED</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col mb-4">
+                <div class="card" style="height: 330px">
+                    <img src="../assets/store/store3.jpg" class="card-img-top" alt="..." />
+                    <div class="card-body">
+                        <h5 class="card-title nowrap">ELP Barbershop</h5>
+                        <p class="cart-text nowrap">
+                            3 Finsbury Avenue, London, EC2M 2PA, England
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col mb-4">
+                <div class="card" style="height: 330px">
+                    <img src="../assets/store/store4.jpg" class="card-img-top" alt="..." />
+                    <div class="card-body">
+                        <h5 class="card-title nowrap">
+                            Chelsea Hair and Skin Clinic By KARDA
+                        </h5>
+                        <p class="cart-text nowrap">
+                            50 Harrington Road, London (South Kensington), SW7 3ND, England
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END SERVICES -->
+
+    <!-- INFORMATION -->
+
+    <!-- END INFORMATION -->
+
+    <!-- CREATOR -->
+
+    <!-- CREATOR -->
+
+    <!-- PAGINATION -->
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+                <a class="page-link">Previous</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item active" aria-current="page">
+                <a class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">3</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- END PAGINATION -->
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container-fluid p-5">
+            <div class="row">
+                <div class="col-3 footer-social">
+                    <a class="navbar-brand ml-4" href="#" style="color:#000;">Beauty</a>
+                    <div class="social-icons">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-linkedin"></i>
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
     
+                <div class="col-4 footer-contact">
+                    <p class="f-title">Contact us</p>                    
+                    <p class="phone">Hotline: 0345954038</p>
+                    <p class="email">Email: nhom07@gmail.com</p>
+                    <p class="address">Address: 273 An Duong Vuong, 5 Dict, HCM city, Viet Nam</p>
+                </div>
+                
+                <div class="col-2 footer-legal">
+                    <p class="f-title">Legal list</p>                    
+                    <p class="bookingterm">Booking terms</p>
+                    <p class="webterm">Web terms</p>
+                    <p class="policy">Private policy</p>
+                </div>
+                
+                <div class="col-3 map">
+                    <p class="f-title">Guide map</p>                  
+                    <img src="../assets/map.png" alt="" class="map-image">
+                </div>
+            </div>
+        </div>
+        
+        
+    </footer>
+
+    <!-- END FOOTER -->
 </body>
+
 </html>
