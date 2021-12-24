@@ -18,7 +18,7 @@ class AppointmentModel extends Database {
         return $data;
     }
 
-    public function getStaffByCustomerID($cusid){
+    public function getListByCustomerID($cusid){
         $conn = parent::connect();
         $sql = "SELECT * FROM appointments WHERE customer_id='$cusid'";
         $result = mysqli_query($conn,$sql);
@@ -28,4 +28,13 @@ class AppointmentModel extends Database {
         return $data;
     }
     
+	public function getUpAppByCusID($cusid){
+		$conn = parent::connect();
+        $sql = "SELECT * FROM appointments WHERE customer_id='$cusid' AND status IN (1,2)";
+        $result = mysqli_query($conn,$sql);
+        while($row = mysqli_fetch_array($result)){
+           $data[] = $row;
+        }
+        return $data;
+	}
 }

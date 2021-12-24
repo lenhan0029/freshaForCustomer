@@ -1,0 +1,4 @@
+0 : Hủy
+1 : mới tạo
+2 : Bắt đầu thực hiện dịch vụ
+3 : Hoàn thành

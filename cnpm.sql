@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: Dec 22, 2021 at 04:59 PM
+-- Generation Time: Dec 23, 2021 at 10:58 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -60,6 +60,14 @@ CREATE TABLE `appointments` (
   `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
+--
+-- Dumping data for table `appointments`
+--
+
+INSERT INTO `appointments` (`id`, `customer_id`, `store_id`, `staff_id`, `start_time`, `end_time`, `total_price`, `status`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 2, '2021-12-23 09:03:45', '2021-12-23 10:03:45', 200, 1, '2021-12-23 09:05:01', '2021-12-23 09:05:01'),
+(2, 1, 2, 4, '2021-12-24 09:03:45', '2021-12-24 10:03:45', 300, 1, '2021-12-23 09:05:01', '2021-12-23 09:05:01');
+
 -- --------------------------------------------------------
 
 --
@@ -74,6 +82,16 @@ CREATE TABLE `appointment_detail` (
   `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
+--
+-- Dumping data for table `appointment_detail`
+--
+
+INSERT INTO `appointment_detail` (`service_id`, `appointment_id`, `status`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, '2021-12-23 09:14:30', '2021-12-23 09:14:30'),
+(2, 1, 1, '2021-12-23 09:14:30', '2021-12-23 09:14:30'),
+(3, 2, 1, '2021-12-23 09:20:01', '2021-12-23 09:20:01'),
+(4, 2, 1, '2021-12-23 09:20:01', '2021-12-23 09:20:01');
+
 -- --------------------------------------------------------
 
 --
@@ -83,12 +101,23 @@ CREATE TABLE `appointment_detail` (
 CREATE TABLE `business_time` (
   `id` int(10) NOT NULL,
   `store_id` int(10) NOT NULL,
-  `start_time` datetime NOT NULL,
-  `end_time` datetime NOT NULL,
+  `start_time` time NOT NULL,
+  `end_time` time NOT NULL,
   `day_of_week` varchar(10) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Dumping data for table `business_time`
+--
+
+INSERT INTO `business_time` (`id`, `store_id`, `start_time`, `end_time`, `day_of_week`, `created_at`, `updated_at`) VALUES
+(1, 1, '08:00:00', '17:00:00', 'Monday', '2021-12-23 09:32:46', '2021-12-23 09:32:46'),
+(2, 1, '08:00:00', '17:00:00', 'Tuesday', '2021-12-23 09:33:03', '2021-12-23 09:33:03'),
+(3, 1, '08:00:00', '17:00:00', 'Wednesday', '2021-12-23 09:33:24', '2021-12-23 09:33:24'),
+(4, 1, '08:00:00', '17:00:00', 'Thursday', '2021-12-23 09:33:37', '2021-12-23 09:33:37'),
+(5, 1, '08:00:00', '17:00:00', 'Friday', '2021-12-23 09:33:47', '2021-12-23 09:33:47');
 
 -- --------------------------------------------------------
 
@@ -127,6 +156,13 @@ CREATE TABLE `customer` (
   `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`id`, `first_name`, `last_name`, `gender`, `phone`, `email`, `password`, `salt`, `avatar`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Huynh', 'Loc', 'FEMALE', '0123456789', 'huynhloc@gmail.com', '3d55a249c559fdd849bc80f07022d659', 'uEbHhwJMLSsxknTbvFGEqvygxtEUcqxGWUXAqeHeerxjGzPwEk', NULL, 1, '2021-12-23 09:01:39', '2021-12-23 09:01:39');
+
 -- --------------------------------------------------------
 
 --
@@ -138,6 +174,15 @@ CREATE TABLE `grant_permission` (
   `role_id` int(10) NOT NULL,
   `permission_id` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Dumping data for table `grant_permission`
+--
+
+INSERT INTO `grant_permission` (`id`, `role_id`, `permission_id`) VALUES
+(1, 1, 1),
+(2, 1, 2),
+(3, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -194,6 +239,14 @@ CREATE TABLE `permissions` (
   `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
+--
+-- Dumping data for table `permissions`
+--
+
+INSERT INTO `permissions` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES
+(1, 'Create Appointment', NULL, '2021-12-23 08:33:39', '2021-12-23 08:33:39'),
+(2, 'Update Appointment', NULL, '2021-12-23 08:33:39', '2021-12-23 08:33:39');
+
 -- --------------------------------------------------------
 
 --
@@ -207,6 +260,14 @@ CREATE TABLE `roles` (
   `created_at` timestamp NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Dumping data for table `roles`
+--
+
+INSERT INTO `roles` (`id`, `store_id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 1, 'Owner', '2021-12-23 08:43:36', '2021-12-23 08:44:11'),
+(2, 1, 'Staff', '2021-12-23 08:44:00', '2021-12-23 08:44:00');
 
 -- --------------------------------------------------------
 
@@ -224,6 +285,16 @@ CREATE TABLE `services` (
   `created_at` timestamp NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Dumping data for table `services`
+--
+
+INSERT INTO `services` (`id`, `store_id`, `name`, `price`, `discount`, `status`, `created_at`, `updated_at`) VALUES
+(1, 1, 'Hair Cut', 5, NULL, 1, '2021-12-23 09:11:12', '2021-12-23 09:11:12'),
+(2, 1, 'Tattoo', 10, NULL, 1, '2021-12-23 09:11:53', '2021-12-23 09:11:53'),
+(3, 2, 'Back, Neck and Shoulder Massage', 8, NULL, 1, '2021-12-23 09:19:03', '2021-12-23 09:19:03'),
+(4, 2, 'Traditional Thai Massage', 15, NULL, 1, '2021-12-23 09:19:03', '2021-12-23 09:19:03');
 
 -- --------------------------------------------------------
 
@@ -249,6 +320,16 @@ CREATE TABLE `staffs` (
   `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
+--
+-- Dumping data for table `staffs`
+--
+
+INSERT INTO `staffs` (`id`, `store_id`, `role_id`, `first_name`, `last_name`, `phone`, `email`, `password`, `salt`, `avatar`, `status`, `start_date`, `end_date`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 'Thuan', 'Vo', '0123456789', 'admin@gmail.com', '3d55a249c559fdd849bc80f07022d659', 'uEbHhwJMLSsxknTbvFGEqvygxtEUcqxGWUXAqeHeerxjGzPwEk', NULL, 1, NULL, NULL, '2021-12-23 08:47:33', '2021-12-23 08:49:05'),
+(2, 1, 2, 'Nhan', 'Le', '0987654321', 'staff@gmail.com', '04f6cbedf46e746614916262ff2eaa10', 'ZnGmaNTaCVTIgTQAYTBhoxlwhTwQiIDBtuDwrKHZUYYujNrVlm', NULL, 1, NULL, NULL, '2021-12-23 08:48:53', '2021-12-23 08:48:53'),
+(3, 2, 1, 'Nhu', 'Vo', '096473821', 'nhuvo@gmail.com', '3d55a249c559fdd849bc80f07022d659', 'uEbHhwJMLSsxknTbvFGEqvygxtEUcqxGWUXAqeHeerxjGzPwEk', NULL, 1, NULL, NULL, '2021-12-23 08:51:37', '2021-12-23 08:51:37'),
+(4, 2, 2, 'Trung', 'Nguyen', '0127493027', 'trungnguyen@gmail.com', '04f6cbedf46e746614916262ff2eaa10', 'ZnGmaNTaCVTIgTQAYTBhoxlwhTwQiIDBtuDwrKHZUYYujNrVlm', NULL, 1, NULL, NULL, '2021-12-23 08:51:37', '2021-12-23 08:51:37');
+
 -- --------------------------------------------------------
 
 --
@@ -264,6 +345,14 @@ CREATE TABLE `staff_working` (
   `created_at` timestamp NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Dumping data for table `staff_working`
+--
+
+INSERT INTO `staff_working` (`id`, `staff_id`, `start_time`, `end_time`, `total_time`, `created_at`, `updated_at`) VALUES
+(1, 1, '2021-12-26 08:00:00', '2021-12-26 17:00:14', 9, '2021-12-23 09:57:22', '2021-12-23 09:57:22'),
+(2, 1, '2021-12-27 08:00:00', '2021-12-27 17:00:14', 9, '2021-12-23 09:57:53', '2021-12-23 09:57:53');
 
 -- --------------------------------------------------------
 
@@ -284,6 +373,14 @@ CREATE TABLE `stores` (
   `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
+--
+-- Dumping data for table `stores`
+--
+
+INSERT INTO `stores` (`id`, `owner_id`, `type_id`, `name`, `description`, `cover`, `address`, `status`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 'Beaty Salon', NULL, NULL, NULL, 1, '2021-12-23 08:41:46', '2021-12-23 08:52:26'),
+(2, 3, 1, 'Best Salon', NULL, NULL, NULL, 1, '2021-12-23 08:42:30', '2021-12-23 08:52:35');
+
 -- --------------------------------------------------------
 
 --
@@ -298,6 +395,14 @@ CREATE TABLE `types` (
   `created_at` timestamp NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Dumping data for table `types`
+--
+
+INSERT INTO `types` (`id`, `name`, `description`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Salon', NULL, 1, '2021-12-23 08:29:46', '2021-12-23 08:29:46'),
+(2, 'Massage', NULL, 1, '2021-12-23 08:29:46', '2021-12-23 08:29:46');
 
 -- --------------------------------------------------------
 
@@ -465,13 +570,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `appointments`
 --
 ALTER TABLE `appointments`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `business_time`
 --
 ALTER TABLE `business_time`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `closed_date`
@@ -483,7 +588,7 @@ ALTER TABLE `closed_date`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `license`
@@ -495,25 +600,25 @@ ALTER TABLE `license`
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `staffs`
 --
 ALTER TABLE `staffs`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `stores`
 --
 ALTER TABLE `stores`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `types`
 --
 ALTER TABLE `types`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `vouchers`
