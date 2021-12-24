@@ -1,0 +1,75 @@
+body{
+    font-size: 18px;
+}
+.card-title{
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.fa-star{
+    color: yellow;
+    font-size: 1.5rem;
+}
+
+.booknow{
+    margin-top: 6rem;
+    .btn-primary{
+        background-color:#1a263a;
+    }
+    
+}
+
+.navbar-brand{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.info{
+    &_title{
+        font-size: 2rem;
+        font-weight: 700;
+    }
+    &_wrapper{
+        display: flex;
+        
+    }
+    &_subtitle{
+        margin: 10px;
+        font-size: 18px;
+        color: rgb(161, 161, 161);
+    }
+}
+
+.voucher{
+    background-color: #1a263a;
+    color: #fff;
+    border-radius: 7px;    
+    padding: 10px;
+    &_tag{
+        text-align: center;
+        font-size: 1rem;        
+        margin-bottom: 0;
+    }
+    &_value{
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
+        
+    }
+    .voucher_item{
+        display: flex;
+        justify-content: space-around;
+        font-weight: 700;
+        font-size: 16px;        
+        .number{            
+            text-align: right;
+            .save{                
+                font-size: 12px;
+                background-color: rgba(255, 255, 255, 0.5);
+                padding: 1px 7px;
+                border-radius: 3px;
+            }
+            
+        }
+    }
+}
