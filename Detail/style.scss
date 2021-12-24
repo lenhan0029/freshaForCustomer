@@ -1,75 +1,120 @@
-body{
-    font-size: 18px;
-}
-.card-title{
-    font-size: 3rem;
-    font-weight: 700;
+body {
+  font-size: 18px;
 }
 
-.fa-star{
-    color: yellow;
-    font-size: 1.5rem;
+header {
+    box-shadow: 0px 5px 15px 0px #ccc;
 }
 
-.booknow{
-    margin-top: 6rem;
-    .btn-primary{
-        background-color:#1a263a;
-    }
-    
+.card-title {
+  font-size: 3rem;
+  font-weight: 700;
 }
 
-.navbar-brand{
+.fa-star {
+  color: yellow;
+  font-size: 1.5rem;
+}
+
+.booknow {
+  margin-top: 6rem;
+  .btn-primary {
+    background-color: #1a263a;
+  }
+}
+
+.navbar-brand {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.info {
+  &_title {
     font-size: 2rem;
     font-weight: 700;
+  }
+  &_wrapper {
+    display: flex;
+  }
+  &_subtitle {
+    margin: 10px;
+    font-size: 18px;
+    color: rgb(161, 161, 161);
+  }
 }
 
-.info{
-    &_title{
-        font-size: 2rem;
-        font-weight: 700;
+.voucher {
+  background-color: #1a263a;
+  color: #fff;
+  border-radius: 7px;
+  padding: 10px;
+  &_tag {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+  &_value {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+  }
+  .voucher_item {
+    display: flex;
+    justify-content: space-around;
+    font-weight: 700;
+    font-size: 16px;
+    .number {
+      text-align: right;
+      .save {
+        font-size: 12px;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 1px 7px;
+        border-radius: 3px;
+      }
     }
-    &_wrapper{
-        display: flex;
-        
-    }
-    &_subtitle{
-        margin: 10px;
-        font-size: 18px;
-        color: rgb(161, 161, 161);
-    }
+  }
 }
 
-.voucher{
-    background-color: #1a263a;
-    color: #fff;
-    border-radius: 7px;    
-    padding: 10px;
-    &_tag{
-        text-align: center;
-        font-size: 1rem;        
-        margin-bottom: 0;
+.list {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 5rem;
+  .staff {
+    margin-right: 50px;
+    text-align: center;
+    font-weight: 600;
+    &-image {
+      margin-bottom: 5px;
+      height: 100px;
+      border-radius: 50%;
+      border: 2px solid #1282ff;
     }
-    &_value{
-        font-size: 2rem;
-        font-weight: 700;
-        text-align: center;
-        
+  }
+}
+
+.nav-footer {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px -5px 20px 0px #d8d6d6 ;
+  .store-name {
+    margin-left: 2rem;
+  }
+  .book {
+    display: flex;
+    .service-quantity{
+        color: rgb(165, 162, 162);
     }
-    .voucher_item{
-        display: flex;
-        justify-content: space-around;
-        font-weight: 700;
-        font-size: 16px;        
-        .number{            
-            text-align: right;
-            .save{                
-                font-size: 12px;
-                background-color: rgba(255, 255, 255, 0.5);
-                padding: 1px 7px;
-                border-radius: 3px;
-            }
-            
-        }
+    .btn-book {
+      margin: 0 2rem;
+      background-color: #1a263a;
+      color: #fff;
+      font-weight: 700;
+      font-size: 17px;
+      padding: 10px 30px;
+      &:hover {
+        color: #fff;
+        opacity: 0.8;
+      }
     }
+  }
 }

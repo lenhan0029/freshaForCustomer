@@ -2,6 +2,11 @@ body {
   font-size: 18px;
 }
 
+header {
+  -webkit-box-shadow: 0px 5px 15px 0px #ccc;
+          box-shadow: 0px 5px 15px 0px #ccc;
+}
+
 .card-title {
   font-size: 3rem;
   font-weight: 700;
@@ -80,5 +85,67 @@ body {
   background-color: rgba(255, 255, 255, 0.5);
   padding: 1px 7px;
   border-radius: 3px;
+}
+
+.list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-bottom: 5rem;
+}
+
+.list .staff {
+  margin-right: 50px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.list .staff-image {
+  margin-bottom: 5px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #1282ff;
+}
+
+.nav-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-shadow: 0px -5px 20px 0px #d8d6d6;
+          box-shadow: 0px -5px 20px 0px #d8d6d6;
+}
+
+.nav-footer .store-name {
+  margin-left: 2rem;
+}
+
+.nav-footer .book {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav-footer .book .service-quantity {
+  color: #a5a2a2;
+}
+
+.nav-footer .book .btn-book {
+  margin: 0 2rem;
+  background-color: #1a263a;
+  color: #fff;
+  font-weight: 700;
+  font-size: 17px;
+  padding: 10px 30px;
+}
+
+.nav-footer .book .btn-book:hover {
+  color: #fff;
+  opacity: 0.8;
 }
 /*# sourceMappingURL=style.css.map */
