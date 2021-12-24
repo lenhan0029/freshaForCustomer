@@ -4,7 +4,6 @@
 #wrapper{
 	width:500px; 
 	height:250px; 
-	background-color:;
 	text-align:center;
 	margin:auto; 
 	margin-top:200px
