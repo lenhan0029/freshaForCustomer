@@ -71,6 +71,10 @@ body {
   font-size: 16px;
 }
 
+.voucher .voucher_item .number {
+  text-align: right;
+}
+
 .voucher .voucher_item .number .save {
   font-size: 12px;
   background-color: rgba(255, 255, 255, 0.5);

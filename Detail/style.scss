@@ -61,7 +61,8 @@ body{
         justify-content: space-around;
         font-weight: 700;
         font-size: 16px;        
-        .number{
+        .number{            
+            text-align: right;
             .save{                
                 font-size: 12px;
                 background-color: rgba(255, 255, 255, 0.5);
