@@ -22,12 +22,8 @@
 	padding:15px 0 0 15px;
 }
 
-.test:active{
-	background-color:pink;
-}
-
 .appointment:hover {
-	background-color:white;
+	background-color:rgba(255,255,255,0.5);
 	box-shadow: 5px 10px 10px #E1E1E1;
 }
 
