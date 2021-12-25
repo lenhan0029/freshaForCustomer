@@ -9,11 +9,101 @@
 }
 
 header {
-  margin-top: 5rem;
+  margin-top: 4rem;
   height: 600px;
   background-color: #fbd74d;
   -webkit-clip-path: ellipse(54% 76% at 49% 23%);
           clip-path: ellipse(54% 76% at 49% 23%);
+}
+
+header .header-image {
+  position: absolute;
+  width: auto;
+  height: 550px;
+  left: 400px;
+  top: 110px;
+}
+
+header .header .discover {
+  background-color: #fff;
+  position: absolute;
+  width: 500px;
+  height: 350px;
+  left: 120px;
+  top: 120px;
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+header .header .discover-title {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+header .header .discover-button {
+  background-color: #1a263a;
+  border-radius: 5px;
+  color: #fff;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
+header .header .discover-button .text {
+  margin: 0;
+}
+
+header .header .rating {
+  position: absolute;
+  right: 180px;
+  top: 250px;
+}
+
+header .header .rating-title {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0;
+}
+
+header .header .rating-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2px;
+}
+
+header .header .rating-icons #rating-icon {
+  background-color: #fff;
+  width: 30px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+}
+
+.category-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 10px;
 }
 
 .title {
