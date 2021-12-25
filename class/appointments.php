@@ -30,7 +30,20 @@ class AppointmentModel extends Database {
     
 	public function getUpAppByCusID($cusid){
 		$conn = parent::connect();
-        $sql = "SELECT * FROM appointments WHERE customer_id='$cusid' AND CURRENT_TIMESTAMP > start_time";
+        $sql = "SELECT * FROM appointments WHERE customer_id='$cusid' AND CURRENT_TIMESTAMP < end_time AND status IN (1,2)";
+        $result = mysqli_query($conn,$sql);
+		if(mysqli_num_rows($result)==0)
+			return 0;
+        while($row = mysqli_fetch_array($result)){
+           $data[] = $row;
+        }
+        return $data;
+		
+	}
+	
+	public function getPastAppByCusID($cusid){
+		$conn = parent::connect();
+        $sql = "SELECT * FROM appointments WHERE customer_id='$cusid' AND CURRENT_TIMESTAMP > end_time";
         $result = mysqli_query($conn,$sql);
 		if(mysqli_num_rows($result)==0)
 			return 0;
