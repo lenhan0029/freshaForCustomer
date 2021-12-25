@@ -1,0 +1,97 @@
+.first-nav{
+    margin-left: 105px;
+
+    background: white;
+}
+
+.result{
+    margin-left: 120px;
+    align-items: center;
+
+}
+.second-nav{
+    top: 55px;
+    box-shadow: 0 8px 6px -6px #999;
+
+}
+
+
+.drop-choose{
+    margin-left: 100px;
+    background-color:white;
+    font-size: 16px;
+    font-weight: 700;
+    width: 200px;
+    border-radius: 50px;
+}
+
+.drop-choose2{
+    margin-left:50px;
+    background-color:white;
+    font-size: 16px;
+    font-weight: 700;
+    width: 200px;
+    border-radius: 50px;
+}
+
+.drop-menu{
+    margin-left: 100px;
+
+    margin-top: 5px;
+}
+
+.drop-menu2{
+    margin-left: 50px;
+    margin-top: 5px;
+}
+.dropdown-item{
+    width: 200px;
+}
+
+.drop-choose2 .drop-2{
+    width: 200px;
+}
+
+.card{
+    width: 21.5rem;
+    border-radius: 10px;
+}
+.carousel-inner{
+    border-radius: 10px;
+}
+
+.user-btn{
+    margin-left: 330px;
+}
+.card-text{
+    font-size: 15px;
+    font-weight: 200;
+}
+.btn-ctiet{
+    padding: 0 20px 0 20px;
+    text-align: center;
+    width: 150px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    background:lightblue;
+    color:rgb(1, 93, 186);
+}
+
+.has-search .form-control {
+    width: 40px;
+    padding-left: 2.375rem;
+    width: 400px;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
