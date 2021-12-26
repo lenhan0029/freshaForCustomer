@@ -4,7 +4,6 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 <div style="width:100%; padding:0; margin:0">
 	<?php
-		$_SESSION['customer_id']=1;
 		include_once("../../class/appointments.php");
 		$app = new AppointmentModel();
 		$list = $app->getListByCustomerID($_SESSION['customer_id']);
