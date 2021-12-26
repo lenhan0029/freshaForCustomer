@@ -2,11 +2,16 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <div id="leftContainer">
 	<div>
-        <?php include("../../actions/appointment/upAppoint.php"); ?>
+        <?php include("leftContainer/upAppoint.php"); ?>
     </div>
     <div style="margin-top:30px">
-    	<?php include("../../actions/appointment/pastAppoint.php"); ?>
+    	<?php include("leftContainer/pastAppoint.php"); ?>
     </div>
 </div>
 <div id="rightContainer">
+	<div>
+   
+    </div>
+    <div>
+    </div>
 </div>

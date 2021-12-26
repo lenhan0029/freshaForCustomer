@@ -4,7 +4,7 @@
 	$id = $_SESSION['customer_id'];
 ?>
 <div>
-	<h4 style="float:left"><b>Upcoming appointments</b></h4>
+	<h4 style="float:left; color:rgba(16,25,42,1)"><b>Upcoming appointments</b></h4>
     <span id="quantityUpApp" class="badge badge-light" style="margin-left:10px; border-radius:20px; font-size:16px">
 		<?php
             $list = $app->getUpAppByCusID($id);
