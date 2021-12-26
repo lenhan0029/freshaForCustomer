@@ -14,15 +14,19 @@
             echo "$quantity";
         ?>
     </span>
+    <?php
+		if($quantity == 0)
+			echo '<div style="clear:both; width:350px; color:#CCC">Have fun making some! Any booking you make will show up here</div>';
+	?>
 </div>
-<div class="appContainer">
+<div id="upAppContainer" class="appContainer">
 	<?php
 		if($list!=0){
 			for($i=0;$i<sizeof($list);$i++){
 				$detail = $app->getDetailByAppID($list[$i]['id']);
 	?>
                 <a class="test" href="#" style="color:black; text-decoration:none">
-                    <div class="appointment">
+                    <div id="<?php echo 'upApp-' . $list[$i]['id']; ?>" class="appointment" onclick="appointment_data(this); highLight(this);">
                         <div>
                             <div style="font-size:12px; float:left"><?php echo $list[$i]['start_time']; ?></div>
                             <div style="float:left; margin-left:10px">
@@ -56,6 +60,7 @@
 			}
 		}
 	?>
-</div> 
+</div>
+
 
 

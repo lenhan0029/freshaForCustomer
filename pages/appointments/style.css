@@ -30,7 +30,37 @@
 #rightContainer{
 	width:65%;
 	height:100%;
-	background-color:blue;
+	background-color:#F4F1F6;
 	float:left;
 	overflow:auto;
+	padding-left:10px;
+}
+
+#contentWrapper{
+	width:85%;
+	box-shadow: 5px 10px 10px #E1E1E1; 
+	border-radius:0 0 10px 10px;
+}
+
+#inforStoreWrapper{
+	height:220px;
+	background-color:rgba(16,25,42,1);
+	color:white;
+	padding:40px 40px 0 40px
+}
+
+#inforStoreWrapper div{
+	overflow:hidden
+}
+
+#detailAppWrapper{
+	background-color:white;
+	padding:0 40px 40px 40px;
+	border-radius:0 0 10px 10px;
+}
+
+#detailAppContainer{
+	background-color:#F4F1F6;
+	padding:10px 20px 10px 20px;
+	border-radius:0 0 10px 10px;
 }
