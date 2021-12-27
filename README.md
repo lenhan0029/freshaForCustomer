@@ -1,4 +1,4 @@
-###HƯỚNG DẪN CÀI ĐẶT
+##HƯỚNG DẪN CÀI ĐẶT
 1. Tải souce code dự án từ github : 
 https://github.com/lenhan0029/freshaForCustomer.git
 https://github.com/lenhan0029/freshForPartner.git
