@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: Dec 23, 2021 at 10:58 AM
+-- Generation Time: Dec 27, 2021 at 05:24 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ooad`
+-- Database: `cnpm`
 --
 
 -- --------------------------------------------------------
@@ -214,10 +214,24 @@ CREATE TABLE `invoices` (
 
 CREATE TABLE `license` (
   `id` int(10) NOT NULL,
-  `admin_id` int(10) NOT NULL,
-  `store_id` int(10) NOT NULL,
   `name` varchar(50) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `rules` varchar(50) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `percent` float NOT NULL,
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `license_store`
+--
+
+CREATE TABLE `license_store` (
+  `id` int(10) NOT NULL,
+  `admin_id` int(10) NOT NULL,
+  `store_id` int(10) NOT NULL,
+  `license_id` int(10) NOT NULL,
   `expired` datetime NOT NULL,
   `percent` float NOT NULL,
   `status` int(1) DEFAULT 1,
@@ -494,9 +508,16 @@ ALTER TABLE `invoices`
 -- Indexes for table `license`
 --
 ALTER TABLE `license`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `license_store`
+--
+ALTER TABLE `license_store`
   ADD PRIMARY KEY (`id`),
   ADD KEY `admin_id` (`admin_id`),
-  ADD KEY `store_id` (`store_id`);
+  ADD KEY `store_id` (`store_id`),
+  ADD KEY `license_id` (`license_id`);
 
 --
 -- Indexes for table `permissions`
@@ -591,9 +612,9 @@ ALTER TABLE `customer`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `license`
+-- AUTO_INCREMENT for table `license_store`
 --
-ALTER TABLE `license`
+ALTER TABLE `license_store`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
@@ -674,11 +695,12 @@ ALTER TABLE `invoices`
   ADD CONSTRAINT `invoices_ibfk_4` FOREIGN KEY (`voucher_id`) REFERENCES `vouchers` (`id`);
 
 --
--- Constraints for table `license`
+-- Constraints for table `license_store`
 --
-ALTER TABLE `license`
+ALTER TABLE `license_store`
   ADD CONSTRAINT `license_ibfk_1` FOREIGN KEY (`admin_id`) REFERENCES `admin` (`id`),
-  ADD CONSTRAINT `license_ibfk_3` FOREIGN KEY (`store_id`) REFERENCES `stores` (`id`);
+  ADD CONSTRAINT `license_ibfk_3` FOREIGN KEY (`store_id`) REFERENCES `stores` (`id`),
+  ADD CONSTRAINT `license_store_ibfk_1` FOREIGN KEY (`license_id`) REFERENCES `license` (`id`);
 
 --
 -- Constraints for table `roles`
