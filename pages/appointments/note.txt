@@ -2,3 +2,9 @@
 1 : mới tạo
 2 : Bắt đầu thực hiện dịch vụ
 3 : Hoàn thành
+
+function getWeekday($date) {
+    return date('l', strtotime($date));
+}
+
+echo getWeekday('2021-12-23 16:03:45'); 

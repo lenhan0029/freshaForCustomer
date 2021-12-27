@@ -1,23 +1,66 @@
 @charset "utf-8";
 #leftContainer{
-	width:40%;
-	height:300px;
-	background-color:red;
+	width:35%;
+	height:100%;
+	background-color:#F4F1F6;
 	float:left;
 	overflow:auto;
 	padding:20px 0 0 100px;
+	position:relative
 }
 
-#upAppoint{
-	width:100%
+.appContainer{
+	margin-top:20px;
+	width:310px;
 }
 
+.appointment{
+	width:310px;
+	height:90px;
+	border-radius:8px;
+	overflow:hidden;
+	padding:15px 0 0 15px;
+}
 
+.appointment:hover {
+	background-color:rgba(255,255,255,0.3);
+	box-shadow: 5px 10px 10px #E1E1E1;
+}
 
 #rightContainer{
-	width:60%;
-	height:300px;
-	background-color:blue;
+	width:65%;
+	height:100%;
+	background-color:#F4F1F6;
 	float:left;
 	overflow:auto;
+	padding-left:10px;
+}
+
+#contentWrapper{
+	width:85%;
+	box-shadow: 5px 10px 10px #E1E1E1; 
+	border-radius:0 0 10px 10px;
+}
+
+#inforStoreWrapper{
+	height:220px;
+	background-color:rgba(16,25,42,1);
+	color:white;
+	padding:40px 40px 0 40px
+}
+
+#inforStoreWrapper div{
+	overflow:hidden
+}
+
+#detailAppWrapper{
+	background-color:white;
+	padding:0 40px 40px 40px;
+	border-radius:0 0 10px 10px;
+}
+
+#detailAppContainer{
+	background-color:#F4F1F6;
+	padding:10px 20px 10px 20px;
+	border-radius:0 0 10px 10px;
 }
